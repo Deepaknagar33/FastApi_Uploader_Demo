@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="card">
+    <h2>Folder Upload</h2>
+    <p class="badge">Uploading folder (❌ skipping .pdf files)</p>
+
+    <form (submit)="onSubmit($event)" novalidate>
+      <div class="row" style="margin-top: 12px;">
+        <input
+          type="file"
+          webkitdirectory
+          directory
+          multiple
+          (change)="onFolderSelect($event)"
+        />
+        <button class="btn primary" type="submit" [disabled]="!files.length || isUploading">
+          {{ isUploading ? 'Uploading...' : 'Upload Folder' }}
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="files.length">
+      <p><strong>{{ files.length }}</strong> files selected</p>
+      <ul style="max-height:150px;overflow:auto;text-align:left;font-size:0.9rem">
+        <li *ngFor="let f of files">{{ f.name }}</li>
+      </ul>
+    </div>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+    <p class="success" *ngIf="message">{{ message }}</p>
+  </div>
+</div>

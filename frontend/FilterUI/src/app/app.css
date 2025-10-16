@@ -1,0 +1,171 @@
+/* === Base & Layout === */
+:host {
+  display: block;
+  height: 100vh;
+  background: linear-gradient(135deg, #e8f0fe 0%, #f9fbfd 100%);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #2c3e50;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+/* === Card === */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 2rem 3rem;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* === Headings === */
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1976d2;
+  letter-spacing: 0.5px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #e3f2fd;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #1565c0;
+  margin-bottom: 1.25rem;
+  border: 1px solid #bbdefb;
+}
+
+/* === Form Controls === */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+input[type="file"] {
+  padding: 8px;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s;
+  font-size: 0.9rem;
+}
+
+input[type="file"]:hover {
+  border-color: #1976d2;
+  background: #f0f7ff;
+}
+
+/* === Buttons === */
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.btn.primary {
+  background-color: #1976d2;
+  color: white;
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.3);
+}
+
+.btn.primary:hover:not(:disabled) {
+  background-color: #1565c0;
+  box-shadow: 0 3px 8px rgba(25, 118, 210, 0.4);
+}
+
+.btn:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* === File List === */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+  border-radius: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+ul li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #eaeaea;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #37474f;
+  transition: background 0.2s;
+}
+
+ul li:hover {
+  background: #e3f2fd;
+}
+
+/* === Messages === */
+.error {
+  color: #c62828;
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #2e7d32;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  input[type="file"], .btn {
+    width: 100%;
+  }
+
+  ul {
+    max-height: 140px;
+  }
+}
